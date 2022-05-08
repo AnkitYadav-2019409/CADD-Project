@@ -31,8 +31,29 @@ e = modeller.Environ()
 a = modeller.Alignment(e, file='query-7dwzA.ali')
 
 template = get_profile('7dwzA.profile', a['7dwzA'])
-model = get_profile('query.profile', a['query'])
+for i in range(9):
+    model = get_profile('query.B9999000' + str(i+1) + '.pdb', a['query.B9999000' + str(i)])
+    # Plot the template and model profiles in the same plot for comparison:
+    pylab.figure(1, figsize=(10,6))
+    pylab.xlabel('Alignment position')
+    pylab.ylabel('DOPE per-residue score')
+    pylab.plot(model, color='red', linewidth=2, label='Model')
+    pylab.plot(template, color='green', linewidth=2, label='Template')
+    pylab.legend()
+    pylab.savefig('query.B9999000' + str(i+1) + '.png', dpi=65)
 
+for i in range(10, 99):
+    model = get_profile('query.B999900' + str(i+1) + '.pdb', a['query.B999900' + str(i)])
+    # Plot the template and model profiles in the same plot for comparison:
+    pylab.figure(1, figsize=(10,6))
+    pylab.xlabel('Alignment position')
+    pylab.ylabel('DOPE per-residue score')
+    pylab.plot(model, color='red', linewidth=2, label='Model')
+    pylab.plot(template, color='green', linewidth=2, label='Template')
+    pylab.legend()
+    pylab.savefig('query.B999900' + str(i+1) + '.png', dpi=65)
+
+model = get_profile('query.B99990100.pdb', a['query.B99990100'])
 # Plot the template and model profiles in the same plot for comparison:
 pylab.figure(1, figsize=(10,6))
 pylab.xlabel('Alignment position')
@@ -40,4 +61,4 @@ pylab.ylabel('DOPE per-residue score')
 pylab.plot(model, color='red', linewidth=2, label='Model')
 pylab.plot(template, color='green', linewidth=2, label='Template')
 pylab.legend()
-pylab.savefig('dope_profile_best.png', dpi=65)
+pylab.savefig('query.B99990100.png', dpi=65)
