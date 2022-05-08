@@ -1,0 +1,5 @@
+Model Name: query.B99990052.pdb with DOPE score: -61881.06641
+Model Name: query.B99990049.pdb with DOPE score: -61551.42578
+Model Name: query.B99990036.pdb with DOPE score: -61522.49219
+Model Name: query.B99990019.pdb with DOPE score: -61448.6875
+Model Name: query.B99990064.pdb with DOPE score: -61431.02734
